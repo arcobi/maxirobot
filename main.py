@@ -5,7 +5,7 @@
 #python3 admin.py
 
 MAIN_ADMIN = 214576309
-SECONDARY_SHITTY_ADMIN = 292857447
+SECONDARY_ADMIN = 292857447
 
 import text 
 import admin
@@ -192,7 +192,7 @@ def submitSolution(bot, update):
 	for t in txtsplit:
 		if 'http' in t:
 			bot.send_message(MAIN_ADMIN, 'YOU GOT A SOLUTION!\nsender: @{0}\nlink: {1}'.format(update.message.from_user.username, t))
-			bot.send_message(SECONDARY_SHITTY_ADMIN, 'YOU GOT A SOLUTION!\nsender: @{0}\nlink: {1}'.format(update.message.from_user.username, t))
+			bot.send_message(SECONDARY_ADMIN, 'YOU GOT A SOLUTION!\nsender: @{0}\nlink: {1}'.format(update.message.from_user.username, t))
 			bot.send_message(chatid(update), 'Thank you for submitting a solution and for using maxibot. Your solution will be revised and posted on the solution channel')
 			return
 	bot.send_message(chatid(update), 'make sure your solution contains a link. any impropriate use will be reported')
@@ -216,7 +216,7 @@ def submitChallenge(bot, update):
 		return
 
 	bot.send_message(MAIN_ADMIN, 'YOU GOT A CHALLENGE IDEA!\nsender: @{0}\nidea:{1}'.format(update.message.from_user.username, txt[1:]))
-	bot.send_message(SECONDARY_SHITTY_ADMIN, 'YOU GOT A CHALLENGE IDEA!\nsender: @{0}\nidea:{1}'.format(update.message.from_user.username, txt[1:]))
+	bot.send_message(SECONDARY_ADMIN, 'YOU GOT A CHALLENGE IDEA!\nsender: @{0}\nidea:{1}'.format(update.message.from_user.username, txt[1:]))
 	bot.send_message(chatid(update), 'Thank you for submitting us a challenge! It will be posted on the programming challenges channel, with credits if it gets the approval of maxi\nNote:any impropriate use will be signaled')
 
 challenge_handler = CommandHandler('challenge', submitChallenge)
